@@ -301,7 +301,7 @@ exports[`renders ./components/alert/demo/icon.md correctly 1`] = `
     <span
       class="ant-alert-message"
     >
-      Success Tips
+      success tips
     </span>
     <span
       class="ant-alert-description"

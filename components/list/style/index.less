@@ -9,9 +9,6 @@
   * {
     outline: none;
   }
-  .ant-spin-container {
-    overflow: visible;
-  }
   &-pagination {
     margin-top: 24px;
     text-align: right;
@@ -42,9 +39,9 @@
     &-meta {
       align-items: flex-start;
       display: flex;
-      flex: 1;
       font-size: 0;
       &-avatar {
+        flex: 0;
         margin-right: 16px;
       }
       &-content {
@@ -110,6 +107,9 @@
       display: flex;
       flex: 1;
     }
+    &-extra {
+      flex: 0;
+    }
   }
 
   &-header,
@@ -165,6 +165,7 @@
     }
     &-extra {
       margin-left: 58px;
+      flex: 0;
     }
     &-meta {
       margin-bottom: 16px;

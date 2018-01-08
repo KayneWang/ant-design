@@ -1,19 +1,17 @@
 .resource-cards {
-  display: flex;
-  flex-flow: wrap;
   width: 100%;
 }
 
 .resource-card {
-  display: flex;
-  max-width: 420px;
+  max-width: 350px;
   width: 40%;
   min-width: 300px;
   height: 130px;
-  border: 1px solid #ced4d9;
+  border: 1px solid #e9e9e9;
   border-radius: @border-radius-base;
   font-size: 12px;
   color: #777;
+  display: inline-block;
   margin: 20px 40px 10px 0;
   vertical-align: middle;
   transition: all 0.3s ease;
@@ -35,22 +33,23 @@
   pointer-events: none;
 }
 
-.resource-card-cover, .resource-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 130px;
-}
-
-.resource-card-cover img {
-  width: 68px;
+.resource-card img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  margin: 0 20px 0 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .resource-card-content {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 92px;
 }
 
 .resource-card-title {
@@ -66,6 +65,6 @@
 
 .resource-card-description {
   display: block;
-  color: #697b8c;
+  color: #999;
   padding-right: 8px;
 }

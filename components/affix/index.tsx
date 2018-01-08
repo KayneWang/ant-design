@@ -162,6 +162,7 @@ export default class Affix extends React.Component<AffixProps, AffixState> {
         position: 'fixed',
         top,
         left: targetRect.left + elemOffset.left,
+        maxHeight: `calc(100vh - ${top}px)`,
         width,
       });
       this.setPlaceholderStyle({

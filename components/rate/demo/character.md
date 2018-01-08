@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 4
 title:
   zh-CN: 其他字符
   en-US: Other Character

@@ -36,7 +36,6 @@ export interface ModalProps {
   cancelText?: string;
   /** 点击蒙层是否允许关闭*/
   maskClosable?: boolean;
-  destroyOnClose?: boolean;
   style?: React.CSSProperties;
   wrapClassName?: string;
   maskTransitionName?: string;

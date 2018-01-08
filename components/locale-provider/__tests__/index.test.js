@@ -62,9 +62,9 @@ const App = () => (
       <Option value="jack">jack</Option>
       <Option value="lucy">lucy</Option>
     </Select>
-    <DatePicker open />
-    <TimePicker open defaultOpenValue={moment()} />
-    <RangePicker open style={{ width: 200 }} />
+    <DatePicker />
+    <TimePicker defaultOpenValue={moment()} />
+    <RangePicker style={{ width: 200 }} />
     <Popconfirm title="Question?" visible>
       <a>Click to confirm</a>
     </Popconfirm>
@@ -83,17 +83,17 @@ const App = () => (
 );
 
 describe('Locale Provider', () => {
-  locales.forEach((locale) => {
-    it(`should display the text as ${locale.locale}`, () => {
-      MockDate.set(moment('2017-09-18T03:30:07.795Z').valueOf() + (new Date().getTimezoneOffset() * 60 * 1000));
+  it('should display the text as locale changed', () => {
+    MockDate.set(moment('2017-09-18T03:30:07.795Z').valueOf());
+    locales.forEach((locale) => {
       const wrapper = mount(
         <LocaleProvider locale={locale}>
           <App />
         </LocaleProvider>
       );
       expect(wrapper.render()).toMatchSnapshot();
-      MockDate.reset();
     });
+    MockDate.reset();
   });
 
   it('should change locale of Modal.xxx', () => {

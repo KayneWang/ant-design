@@ -118,7 +118,6 @@ export default class BackTop extends React.Component<BackTopProps, any> {
       'className',
       'children',
       'visibilityHeight',
-      'target',
     ]);
 
     const backTopBtn = this.state.visible ? (

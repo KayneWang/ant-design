@@ -33,21 +33,35 @@ function fileNameToPath(filename) {
   return snippets[snippets.length - 1];
 }
 
+function isNotTopLevel(level) {
+  return level !== 'topLevel';
+}
+
+let isMobile;
+utils.enquireScreen((b) => {
+  isMobile = b;
+});
+
 export default class MainContent extends React.Component {
   static contextTypes = {
     intl: PropTypes.object.isRequired,
-    isMobile: PropTypes.bool.isRequired,
   }
 
   constructor(props) {
     super(props);
     this.state = {
       openKeys: this.getSideBarOpenKeys(props) || [],
+      isMobile,
     };
   }
 
   componentDidMount() {
     this.componentDidUpdate();
+    utils.enquireScreen((b) => {
+      this.setState({
+        isMobile: !!b,
+      });
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,11 +71,11 @@ export default class MainContent extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (!prevProps || prevProps.location.pathname !== this.props.location.pathname) {
+  componentDidUpdate(nextProps) {
+    if (!nextProps || nextProps.location.pathname !== this.props.location.pathname) {
       this.bindScroller();
     }
-    if (!prevProps || (!window.location.hash && prevProps && prevProps.location.pathname !== this.props.location.pathname)) {
+    if (!window.location.hash && nextProps && nextProps.location.pathname !== this.props.location.pathname) {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       return;
@@ -109,7 +123,6 @@ export default class MainContent extends React.Component {
   }
 
   getSideBarOpenKeys(nextProps) {
-    const { themeConfig } = nextProps;
     const { pathname } = nextProps.location;
     const prevModule = this.currentModule;
     this.currentModule = pathname.replace(/^\//).split('/')[1] || 'components';
@@ -119,12 +132,7 @@ export default class MainContent extends React.Component {
     const locale = utils.isZhCN(pathname) ? 'zh-CN' : 'en-US';
     if (prevModule !== this.currentModule) {
       const moduleData = getModuleData(nextProps);
-      const shouldOpenKeys = utils.getMenuItems(
-        moduleData,
-        locale,
-        themeConfig.categoryOrder,
-        themeConfig.typeOrder
-      ).map(m => m.title[locale] || m.title);
+      const shouldOpenKeys = Object.keys(utils.getMenuItems(moduleData, locale));
       return shouldOpenKeys;
     }
   }
@@ -132,11 +140,11 @@ export default class MainContent extends React.Component {
   generateMenuItem(isTop, item) {
     const { locale } = this.context.intl;
     const key = fileNameToPath(item.filename);
-    const title = item.title[locale] || item.title;
-    const text = isTop ? title : [
-      <span key="english">{title}</span>,
-      <span className="chinese" key="chinese">{item.subtitle}</span>,
-    ];
+    const text = isTop ?
+      item.title[locale] || item.title : [
+        <span key="english">{item.title}</span>,
+        <span className="chinese" key="chinese">{item.subtitle}</span>,
+      ];
     const { disabled } = item;
     const url = item.filename.replace(/(\/index)?((\.zh-CN)|(\.en-US))?\.md$/i, '').toLowerCase();
     const child = !item.link ? (
@@ -163,36 +171,49 @@ export default class MainContent extends React.Component {
     );
   }
 
+  generateSubMenuItems(obj) {
+    const { themeConfig } = this.props;
+    const topLevel = (obj.topLevel || []).map(this.generateMenuItem.bind(this, true));
+    const itemGroups = Object.keys(obj).filter(isNotTopLevel)
+      .sort((a, b) => themeConfig.typeOrder[a] - themeConfig.typeOrder[b])
+      .map((type) => {
+        const groupItems = obj[type].sort((a, b) => {
+          return a.title.charCodeAt(0) -
+            b.title.charCodeAt(0);
+        }).map(this.generateMenuItem.bind(this, false));
+        return (
+          <Menu.ItemGroup title={type} key={type}>
+            {groupItems}
+          </Menu.ItemGroup>
+        );
+      });
+    return [...topLevel, ...itemGroups];
+  }
+
   getMenuItems() {
     const { themeConfig } = this.props;
     const moduleData = getModuleData(this.props);
     const menuItems = utils.getMenuItems(
-      moduleData,
-      this.context.intl.locale,
-      themeConfig.categoryOrder,
-      themeConfig.typeOrder,
+      moduleData, this.context.intl.locale
     );
-    return menuItems.map((menuItem) => {
-      if (menuItem.children) {
-        return (
-          <SubMenu title={<h4>{menuItem.title}</h4>} key={menuItem.title}>
-            {menuItem.children.map((child) => {
-              if (child.type === 'type') {
-                return (
-                  <Menu.ItemGroup title={child.title} key={child.title}>
-                    {child.children.sort((a, b) => {
-                      return a.title.charCodeAt(0) - b.title.charCodeAt(0);
-                    }).map(leaf => this.generateMenuItem(false, leaf))}
-                  </Menu.ItemGroup>
-                );
-              }
-              return this.generateMenuItem(false, child);
-            })}
+    const categories = Object.keys(menuItems).filter(isNotTopLevel);
+    const topLevel = this.generateSubMenuItems(menuItems.topLevel);
+    const result = [...topLevel];
+    result.forEach((item, i) => {
+      const insertCategory = categories.filter(
+        cat => (themeConfig.categoryOrder[cat] ? themeConfig.categoryOrder[cat] <= i : i === result.length - 1)
+      )[0];
+      if (insertCategory) {
+        const target = (
+          <SubMenu title={<h4>{insertCategory}</h4>} key={insertCategory}>
+            {this.generateSubMenuItems(menuItems[insertCategory])}
           </SubMenu>
         );
+        result.splice(i + 1, 0, target);
+        categories.splice(categories.indexOf(insertCategory), 1);
       }
-      return this.generateMenuItem(true, menuItem);
     });
+    return result;
   }
 
   flattenMenu(menu) {
@@ -220,7 +241,6 @@ export default class MainContent extends React.Component {
 
   render() {
     const { props } = this;
-    const { isMobile } = this.context;
     const activeMenuItem = getActiveMenuItem(props);
     const menuItems = this.getMenuItems();
     const { prev, next } = this.getFooterNav(menuItems, activeMenuItem);
@@ -242,10 +262,10 @@ export default class MainContent extends React.Component {
     return (
       <div className="main-wrapper">
         <Row>
-          {isMobile ? (
+          {this.state.isMobile ? (
             <MobileMenu
               iconChild={[<Icon type="menu-unfold" />, <Icon type="menu-fold" />]}
-              key="Mobile-menu"
+              key="mobile-menu"
               wrapperClassName="drawer-wrapper"
             >
               {menuChild}

@@ -42,7 +42,6 @@ export interface SelectProps extends AbstractSelectProps {
   onDeselect?: (value: SelectValue) => any;
   onBlur?: () => any;
   onFocus?: () => any;
-  onInputKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   dropdownMatchSelectWidth?: boolean;
   optionFilterProp?: string;
   labelInValue?: boolean;
@@ -109,16 +108,6 @@ export default class Select extends React.Component<SelectProps, {}> {
     this.rcSelect = node;
   }
 
-  getNotFoundContent(locale: SelectLocale) {
-    const { notFoundContent, mode } = this.props;
-    const isCombobox = mode === 'combobox';
-    if (isCombobox) {
-      // AutoComplete don't have notFoundContent defaultly
-      return notFoundContent === undefined ? null : notFoundContent;
-    }
-    return notFoundContent === undefined ? locale.notFoundContent : notFoundContent;
-  }
-
   renderSelect = (locale: SelectLocale) => {
     const {
       prefixCls,
@@ -132,7 +121,7 @@ export default class Select extends React.Component<SelectProps, {}> {
       [`${prefixCls}-sm`]: size === 'small',
     }, className);
 
-    let { optionLabelProp } = this.props;
+    let { notFoundContent, optionLabelProp } = this.props;
     const isCombobox = mode === 'combobox';
     if (isCombobox) {
       // children 带 dom 结构时，无法填入输入框
@@ -145,6 +134,9 @@ export default class Select extends React.Component<SelectProps, {}> {
       combobox: isCombobox,
     };
 
+    // AutoComplete don't have notFoundContent defaultly
+    const notFoundContentLocale = isCombobox ?
+      (notFoundContent || '') : (notFoundContent || locale.notFoundContent);
     return (
       <RcSelect
         {...restProps}
@@ -152,7 +144,7 @@ export default class Select extends React.Component<SelectProps, {}> {
         prefixCls={prefixCls}
         className={cls}
         optionLabelProp={optionLabelProp || 'children'}
-        notFoundContent={this.getNotFoundContent(locale)}
+        notFoundContent={notFoundContentLocale}
         ref={this.saveSelect}
       />
     );

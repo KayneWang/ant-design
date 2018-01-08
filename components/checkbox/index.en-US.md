@@ -39,5 +39,5 @@ Checkbox.
 
 | Name | Description |
 | ---- | ----------- |
-| blur() | remove focus |
 | focus() | get focus |
+| blur() | remove focus |

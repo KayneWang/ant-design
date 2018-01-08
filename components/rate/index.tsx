@@ -9,7 +9,6 @@ export interface RateProps {
   value?: number;
   defaultValue?: number;
   allowHalf?: boolean;
-  allowClear?: boolean;
   disabled?: boolean;
   onChange?: (value: number) => any;
   onHoverChange?: (value: number) => any;

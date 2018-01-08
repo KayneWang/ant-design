@@ -410,8 +410,10 @@ exports[`renders ./components/list/demo/loadmore.md correctly 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <div
-          style="min-height:53px"
-        />
+          class="ant-list-empty-text"
+        >
+          No data
+        </div>
       </div>
     </div>
     <div

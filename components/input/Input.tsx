@@ -27,18 +27,17 @@ export interface InputProps extends AbstractInputProps {
   id?: number | string;
   name?: string;
   size?: 'large' | 'default' | 'small';
-  maxLength?: number;
+  maxLength?: string;
   disabled?: boolean;
   readOnly?: boolean;
   addonBefore?: React.ReactNode;
   addonAfter?: React.ReactNode;
-  onPressEnter?: React.FormEventHandler<HTMLInputElement>;
-  onKeyDown?: React.FormEventHandler<HTMLInputElement>;
-  onKeyUp?: React.FormEventHandler<HTMLInputElement>;
+  onPressEnter?: React.FormEventHandler<any>;
+  onKeyDown?: React.FormEventHandler<any>;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  onClick?: React.FormEventHandler<HTMLInputElement>;
-  onFocus?: React.FormEventHandler<HTMLInputElement>;
-  onBlur?: React.FormEventHandler<HTMLInputElement>;
+  onClick?: React.FormEventHandler<any>;
+  onFocus?: React.FormEventHandler<any>;
+  onBlur?: React.FormEventHandler<any>;
   autoComplete?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -75,7 +74,6 @@ export default class Input extends React.Component<InputProps, any> {
     autosize: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
     onPressEnter: PropTypes.func,
     onKeyDown: PropTypes.func,
-    onKeyUp: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     prefix: PropTypes.node,
