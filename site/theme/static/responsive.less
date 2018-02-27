@@ -44,7 +44,7 @@
   }
 }
 
-@media only screen and (max-width: @screen-md) {
+@media only screen and (max-width: 767.99px) {
   #header {
     text-align: center;
     #logo {
@@ -166,7 +166,8 @@
     .footer-wrap {
       padding: 40px;
       .ant-row {
-        >div {
+        padding: 0;
+        > div {
           &:nth-child(2),
           &:nth-child(4) {
             display: none;
@@ -240,6 +241,8 @@
       display: inline-block;
       text-align: center;
       margin: auto;
+      max-width: unset;
+      min-width: unset;
     }
     .img-wrapper {
       position: initial;

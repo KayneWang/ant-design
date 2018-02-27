@@ -39,7 +39,7 @@ An enterprise-class UI design language and React-based implementation.
 
 ## Let's build a better antd together [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Read our [contributing guide](./.github/CONTRIBUTING.md).
+Read our [contributing guide](https://ant.design/docs/react/contributing).
 
 ## Install
 
@@ -92,6 +92,7 @@ See [i18n](http://ant.design/docs/react/i18n).
 
 ```bash
 $ git clone git@github.com:ant-design/ant-design.git
+$ cd ant-design
 $ npm install
 $ npm start
 ```

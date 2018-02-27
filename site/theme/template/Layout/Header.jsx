@@ -25,19 +25,10 @@ function initDocSearch(locale) {
     inputSelector: '#search-box input',
     algoliaOptions: { facetFilters: [`tags:${lang}`] },
     transformData(hits) {
-      if (lang === 'cn') {
-        const categories = {
-          Components: '组件',
-          Documentation: '文档',
-        };
-        return hits.map((hit) => {
-          const category = categories[hit.hierarchy.lvl0];
-          hit.hierarchy.lvl0 = category;
-          hit._highlightResult.hierarchy.lvl0.value = category; // eslint-disable-line
-          hit._highlightResult.hierarchy_camel[0].lvl0.value = category; // eslint-disable-line
-          return hit;
-        });
-      }
+      hits.forEach((hit) => {
+        hit.url = hit.url.replace('ant.design', location.host);
+        hit.url = hit.url.replace('https:', location.protocol);
+      });
       return hits;
     },
     debug: false, // Set debug to true if you want to inspect the dropdown
@@ -178,7 +169,7 @@ export default class Header extends React.Component {
       </Menu>,
     ];
 
-    const searchPlaceholder = locale === 'zh-CN' ? '搜索组件...' : 'Search Components...';
+    const searchPlaceholder = locale === 'zh-CN' ? '在 ant.design 中搜索' : 'Search in ant.design';
     return (
       <header id="header" className={headerClassName}>
         {isMobile && (

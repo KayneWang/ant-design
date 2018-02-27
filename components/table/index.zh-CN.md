@@ -77,8 +77,30 @@ const columns = [{
 | onChange | 分页、排序、筛选变化时触发 | Function(pagination, filters, sorter) |  |
 | onExpand | 点击展开图标时触发 | Function(expanded, record) |  |
 | onExpandedRowsChange | 展开的行变化时触发 | Function(expandedRows) |  |
-| onHeaderRow | 设置头部列属性 | Function(column, index) | - |
-| onRow | 设置列属性 | Function(record, index) | - |
+| onHeaderRow | 设置头部行属性 | Function(column, index) | - |
+| onRow | 设置行属性 | Function(record, index) | - |
+
+
+#### onRow 用法
+
+适用于 `onRow` `onHeaderRow` `onCell` `onHeaderCell`。
+
+```jsx
+<Table
+  onRow={(record) => {
+    return {
+      onClick: () => {},       // 点击行
+      onMouseEnter: () => {},  // 鼠标移入行
+      onXxxx...
+    };
+  )}
+  onHeaderRow={(column) => {
+    return {
+      onClick: () => {},        // 点击表头行
+    };
+  )}
+/>
+```
 
 ### Column
 

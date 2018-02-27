@@ -47,6 +47,9 @@ export interface ButtonProps {
   onClick?: React.FormEventHandler<any>;
   onMouseUp?: React.FormEventHandler<any>;
   onMouseDown?: React.FormEventHandler<any>;
+  onKeyPress?: React.KeyboardEventHandler<any>;
+  onKeyDown?: React.KeyboardEventHandler<any>;
+  tabIndex?: number;
   loading?: boolean | { delay?: number };
   disabled?: boolean;
   style?: React.CSSProperties;
@@ -178,7 +181,7 @@ export default class Button extends React.Component<ButtonProps, any> {
 
     const iconType = loading ? 'loading' : icon;
     const iconNode = iconType ? <Icon type={iconType} /> : null;
-    const kids = children
+    const kids = (children || children === 0)
       ? React.Children.map(children, child => insertSpace(child, this.isNeedInserted())) : null;
 
     return (

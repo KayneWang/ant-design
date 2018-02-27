@@ -17,6 +17,7 @@ import Column from './Column';
 import ColumnGroup from './ColumnGroup';
 import createBodyRow from './createBodyRow';
 import { flatArray, treeMap, flatFilter, normalizeColumns } from './util';
+import { SpinProps } from '../spin';
 import {
   TableProps,
   TableState,
@@ -597,9 +598,9 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
             type={type}
             store={this.store}
             rowIndex={rowIndex}
-            disabled={props.disabled}
             onChange={handleChange}
             defaultSelection={this.getDefaultSelection()}
+            {...props}
           />
         </span>
       );
@@ -749,6 +750,11 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
           {filterDropdown}
         </span>
       );
+
+      if (sortButton || filterDropdown) {
+        column.className = classNames(`${prefixCls}-column-has-filters`, column.className);
+      }
+
       return column;
     });
   }
@@ -910,7 +916,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     }
   }
 
-  renderTable = (contextLocale: TableLocale) => {
+  renderTable = (contextLocale: TableLocale, loading: SpinProps) => {
     const locale = { ...contextLocale, ...this.props.locale };
     const { style, className, prefixCls, showHeader, ...restProps } = this.props;
     const data = this.getCurrentPageData();
@@ -948,7 +954,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
         className={classString}
         expandIconColumnIndex={expandIconColumnIndex}
         expandIconAsCell={expandIconAsCell}
-        emptyText={() => locale.emptyText}
+        emptyText={!loading.spinning && locale.emptyText}
       />
     );
   }
@@ -957,12 +963,19 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     const { style, className, prefixCls } = this.props;
     const data = this.getCurrentPageData();
 
+    let loading = this.props.loading as SpinProps;
+    if (typeof loading === 'boolean') {
+      loading = {
+        spinning: loading,
+      };
+    }
+
     const table = (
       <LocaleReceiver
         componentName="Table"
         defaultLocale={defaultLocale.Table}
       >
-        {this.renderTable}
+        {(locale) => this.renderTable(locale, loading)}
       </LocaleReceiver>
     );
 
@@ -971,13 +984,6 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
     const paginationPatchClass = (this.hasPagination() && data && data.length !== 0)
       ? `${prefixCls}-with-pagination` : `${prefixCls}-without-pagination`;
 
-    let loading = this.props.loading;
-    if (typeof loading === 'boolean') {
-      loading = {
-        spinning: loading,
-      };
-    }
-
     return (
       <div
         className={classNames(`${prefixCls}-wrapper`, className)}
@@ -985,7 +991,7 @@ export default class Table<T> extends React.Component<TableProps<T>, TableState<
       >
         <Spin
           {...loading}
-          className={loading ? `${paginationPatchClass} ${prefixCls}-spin-holder` : ''}
+          className={loading.spinning ? `${paginationPatchClass} ${prefixCls}-spin-holder` : ''}
         >
           {table}
           {this.renderPagination()}

@@ -209,9 +209,7 @@ exports[`renders ./components/list/demo/grid.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
@@ -246,9 +244,7 @@ exports[`renders ./components/list/demo/grid.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
@@ -283,9 +279,7 @@ exports[`renders ./components/list/demo/grid.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
@@ -320,9 +314,7 @@ exports[`renders ./components/list/demo/grid.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
@@ -372,7 +364,7 @@ exports[`renders ./components/list/demo/infinite-virtualized-load.md correctly 1
       class="ant-spin"
     >
       <span
-        class="ant-spin-dot"
+        class="ant-spin-dot ant-spin-dot-spin"
       >
         <i />
         <i />
@@ -397,7 +389,7 @@ exports[`renders ./components/list/demo/loadmore.md correctly 1`] = `
           class="ant-spin ant-spin-spinning"
         >
           <span
-            class="ant-spin-dot"
+            class="ant-spin-dot ant-spin-dot-spin"
           >
             <i />
             <i />
@@ -446,7 +438,7 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
           style="margin-left:-8px;margin-right:-8px"
         >
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -474,16 +466,14 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -511,16 +501,14 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -548,16 +536,14 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -585,16 +571,14 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -622,16 +606,14 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4"
+            class="ant-col-xs-24 ant-col-sm-12 ant-col-md-6 ant-col-lg-6 ant-col-xl-4 ant-col-xxl-8"
           >
             <div
               class="ant-list-item"
@@ -659,9 +641,7 @@ exports[`renders ./components/list/demo/resposive.md correctly 1`] = `
                   <div
                     class="ant-card-body"
                   >
-                    <div>
-                      Card content
-                    </div>
+                    Card content
                   </div>
                 </div>
               </div>

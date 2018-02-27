@@ -36,7 +36,7 @@ exports[`renders ./components/table/demo/ajax.md correctly 1`] = `
               >
                 <tr>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Name
@@ -63,7 +63,7 @@ exports[`renders ./components/table/demo/ajax.md correctly 1`] = `
                     </span>
                   </th>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Gender
@@ -879,7 +879,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
               >
                 <tr>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Name
@@ -898,7 +898,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                     </span>
                   </th>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Address
@@ -917,7 +917,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -931,7 +931,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     New York No. 1 Lake Park
                   </td>
@@ -940,7 +940,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -954,7 +954,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                     42
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     London No. 1 Lake Park
                   </td>
@@ -963,7 +963,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -977,7 +977,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     Sidney No. 1 Lake Park
                   </td>
@@ -986,7 +986,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -1000,7 +1000,7 @@ exports[`renders ./components/table/demo/custom-filter-panel.md correctly 1`] = 
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     London No. 2 Lake Park
                   </td>
@@ -1250,15 +1250,19 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              class="ant-switch"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                class="ant-switch"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1280,15 +1284,19 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              class="ant-switch"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                class="ant-switch"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1310,16 +1318,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1341,16 +1353,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1372,16 +1388,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1403,16 +1423,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1434,16 +1458,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1465,16 +1493,20 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              checked=""
-              class="ant-switch ant-switch-checked"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                checked=""
+                class="ant-switch ant-switch-checked"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1496,15 +1528,19 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
             <span
-              class="ant-switch"
-              tabindex="0"
+              class="ant-form-item-children"
             >
               <span
-                class="ant-switch-inner"
-              />
+                class="ant-switch"
+                tabindex="0"
+              >
+                <span
+                  class="ant-switch-inner"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -1526,67 +1562,74 @@ exports[`renders ./components/table/demo/dynamic-settings.md correctly 1`] = `
           class="ant-form-item-control-wrapper"
         >
           <div
-            class="ant-form-item-control "
+            class="ant-form-item-control"
           >
-            <div
-              class="ant-radio-group ant-radio-group-default"
+            <span
+              class="ant-form-item-children"
             >
-              <label
-                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked"
+              <div
+                class="ant-radio-group ant-radio-group-default"
               >
-                <span
-                  class="ant-radio-button ant-radio-button-checked"
+                <label
+                  class="ant-radio-button-wrapper ant-radio-button-wrapper-checked"
                 >
-                  <input
-                    checked=""
-                    class="ant-radio-button-input"
-                    type="radio"
-                  />
                   <span
-                    class="ant-radio-button-inner"
-                  />
-                </span>
-                <span>
-                  Default
-                </span>
-              </label>
-              <label
-                class="ant-radio-button-wrapper"
-              >
-                <span
-                  class="ant-radio-button"
+                    class="ant-radio-button ant-radio-button-checked"
+                  >
+                    <input
+                      checked=""
+                      class="ant-radio-button-input"
+                      type="radio"
+                      value="default"
+                    />
+                    <span
+                      class="ant-radio-button-inner"
+                    />
+                  </span>
+                  <span>
+                    Default
+                  </span>
+                </label>
+                <label
+                  class="ant-radio-button-wrapper"
                 >
-                  <input
-                    class="ant-radio-button-input"
-                    type="radio"
-                  />
                   <span
-                    class="ant-radio-button-inner"
-                  />
-                </span>
-                <span>
-                  Middle
-                </span>
-              </label>
-              <label
-                class="ant-radio-button-wrapper"
-              >
-                <span
-                  class="ant-radio-button"
+                    class="ant-radio-button"
+                  >
+                    <input
+                      class="ant-radio-button-input"
+                      type="radio"
+                      value="middle"
+                    />
+                    <span
+                      class="ant-radio-button-inner"
+                    />
+                  </span>
+                  <span>
+                    Middle
+                  </span>
+                </label>
+                <label
+                  class="ant-radio-button-wrapper"
                 >
-                  <input
-                    class="ant-radio-button-input"
-                    type="radio"
-                  />
                   <span
-                    class="ant-radio-button-inner"
-                  />
-                </span>
-                <span>
-                  Small
-                </span>
-              </label>
-            </div>
+                    class="ant-radio-button"
+                  >
+                    <input
+                      class="ant-radio-button-input"
+                      type="radio"
+                      value="small"
+                    />
+                    <span
+                      class="ant-radio-button-inner"
+                    />
+                  </span>
+                  <span>
+                    Small
+                  </span>
+                </label>
+              </div>
+            </span>
           </div>
         </div>
       </div>
@@ -6980,7 +7023,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                       rowspan="4"
                     >
                       <span>
@@ -7018,7 +7061,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                   </tr>
                   <tr>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                       rowspan="3"
                     >
                       <span>
@@ -7144,7 +7187,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7153,7 +7196,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       1
                     </td>
@@ -7192,7 +7235,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7201,7 +7244,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       2
                     </td>
@@ -7240,7 +7283,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7249,7 +7292,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       3
                     </td>
@@ -7288,7 +7331,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7297,7 +7340,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       4
                     </td>
@@ -7336,7 +7379,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7345,7 +7388,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       5
                     </td>
@@ -7384,7 +7427,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7393,7 +7436,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       6
                     </td>
@@ -7432,7 +7475,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7441,7 +7484,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       7
                     </td>
@@ -7480,7 +7523,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7489,7 +7532,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       8
                     </td>
@@ -7528,7 +7571,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7537,7 +7580,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       9
                     </td>
@@ -7576,7 +7619,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -7585,7 +7628,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       10
                     </td>
@@ -7643,7 +7686,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                       rowspan="4"
                     >
                       <span>
@@ -7681,7 +7724,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7694,7 +7737,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7707,7 +7750,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7720,7 +7763,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7733,7 +7776,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7746,7 +7789,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7759,7 +7802,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7772,7 +7815,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7785,7 +7828,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -7798,7 +7841,7 @@ exports[`renders ./components/table/demo/grouping-columns.md correctly 1`] = `
                       class="ant-table-row  ant-table-row-level-0"
                     >
                       <td
-                        class=""
+                        class="ant-table-column-has-filters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -8083,7 +8126,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
               >
                 <tr>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Name
@@ -8114,7 +8157,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     </span>
                   </th>
                   <th
-                    class="ant-table-column-sort"
+                    class="ant-table-column-has-filters ant-table-column-sort"
                   >
                     <span>
                       Age
@@ -8141,7 +8184,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     </span>
                   </th>
                   <th
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span>
                       Address
@@ -8180,7 +8223,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -8189,12 +8232,12 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     Jim Green
                   </td>
                   <td
-                    class="ant-table-column-sort"
+                    class="ant-table-column-has-filters ant-table-column-sort"
                   >
                     42
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     London No. 1 Lake Park
                   </td>
@@ -8203,7 +8246,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -8212,12 +8255,12 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     John Brown
                   </td>
                   <td
-                    class="ant-table-column-sort"
+                    class="ant-table-column-has-filters ant-table-column-sort"
                   >
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     New York No. 1 Lake Park
                   </td>
@@ -8226,7 +8269,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -8235,12 +8278,12 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     Joe Black
                   </td>
                   <td
-                    class="ant-table-column-sort"
+                    class="ant-table-column-has-filters ant-table-column-sort"
                   >
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     Sidney No. 1 Lake Park
                   </td>
@@ -8249,7 +8292,7 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                   class="ant-table-row  ant-table-row-level-0"
                 >
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     <span
                       class="ant-table-row-indent indent-level-0"
@@ -8258,12 +8301,12 @@ exports[`renders ./components/table/demo/head.md correctly 1`] = `
                     Jim Red
                   </td>
                   <td
-                    class="ant-table-column-sort"
+                    class="ant-table-column-has-filters ant-table-column-sort"
                   >
                     32
                   </td>
                   <td
-                    class=""
+                    class="ant-table-column-has-filters"
                   >
                     London No. 2 Lake Park
                   </td>
@@ -8971,7 +9014,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span>
                         Name
@@ -9002,7 +9045,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       </span>
                     </th>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span>
                         Age
@@ -9029,7 +9072,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       </span>
                     </th>
                     <th
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span>
                         Address
@@ -9068,7 +9111,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -9077,12 +9120,12 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       John Brown
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       32
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       New York No. 1 Lake Park
                     </td>
@@ -9091,7 +9134,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -9100,12 +9143,12 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       Jim Green
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       42
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       London No. 1 Lake Park
                     </td>
@@ -9114,7 +9157,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -9123,12 +9166,12 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       Joe Black
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       32
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       Sidney No. 1 Lake Park
                     </td>
@@ -9137,7 +9180,7 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                     class="ant-table-row  ant-table-row-level-0"
                   >
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       <span
                         class="ant-table-row-indent indent-level-0"
@@ -9146,12 +9189,12 @@ exports[`renders ./components/table/demo/reset-filter.md correctly 1`] = `
                       Jim Red
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       32
                     </td>
                     <td
-                      class=""
+                      class="ant-table-column-has-filters"
                     >
                       London No. 2 Lake Park
                     </td>
@@ -9299,6 +9342,7 @@ exports[`renders ./components/table/demo/row-selection.md correctly 1`] = `
                         >
                           <input
                             class="ant-checkbox-input"
+                            name="John Brown"
                             type="checkbox"
                           />
                           <span
@@ -9347,6 +9391,7 @@ exports[`renders ./components/table/demo/row-selection.md correctly 1`] = `
                         >
                           <input
                             class="ant-checkbox-input"
+                            name="Jim Green"
                             type="checkbox"
                           />
                           <span
@@ -9395,6 +9440,7 @@ exports[`renders ./components/table/demo/row-selection.md correctly 1`] = `
                         >
                           <input
                             class="ant-checkbox-input"
+                            name="Joe Black"
                             type="checkbox"
                           />
                           <span
@@ -9444,6 +9490,7 @@ exports[`renders ./components/table/demo/row-selection.md correctly 1`] = `
                           <input
                             class="ant-checkbox-input"
                             disabled=""
+                            name="Disabled User"
                             type="checkbox"
                           />
                           <span
