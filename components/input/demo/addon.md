@@ -1,8 +1,8 @@
 ---
 order: 2
 title:
-    zh-CN: 前置/后置标签
-    en-US: Pre / Post tab
+  zh-CN: 前置/后置标签
+  en-US: Pre / Post tab
 ---
 
 ## zh-CN
@@ -13,9 +13,10 @@ title:
 
 Using pre & post tabs example.
 
-````jsx
+```jsx
 import { Input, Select, Icon } from 'antd';
-const Option = Select.Option;
+
+const { Option } = Select;
 
 const selectBefore = (
   <Select defaultValue="Http://" style={{ width: 90 }}>
@@ -43,6 +44,7 @@ ReactDOM.render(
     <div style={{ marginBottom: 16 }}>
       <Input addonAfter={<Icon type="setting" />} defaultValue="mysite" />
     </div>
-  </div>
-, mountNode);
-````
+  </div>,
+  mountNode,
+);
+```

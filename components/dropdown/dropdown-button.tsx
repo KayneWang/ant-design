@@ -1,33 +1,60 @@
 import * as React from 'react';
-import Button from '../button';
-import { ButtonGroupProps } from '../button/button-group';
-import Icon from '../icon';
-import Dropdown, { DropDownProps } from './dropdown';
 import classNames from 'classnames';
+import Button from '../button';
+import { ButtonHTMLType } from '../button/button';
+import { ButtonGroupProps } from '../button/button-group';
+import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
+import Dropdown, { DropDownProps } from './dropdown';
+import Icon from '../icon';
+
 const ButtonGroup = Button.Group;
 
+type DropdownButtonType = 'primary' | 'ghost' | 'dashed';
+
 export interface DropdownButtonProps extends ButtonGroupProps, DropDownProps {
-  type?: 'primary' | 'ghost' | 'dashed';
+  type?: DropdownButtonType;
+  htmlType?: ButtonHTMLType;
   disabled?: boolean;
-  onClick?: React.MouseEventHandler<any>;
-  children?: any;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /**
+   * @since 3.17.0
+   */
+  icon?: React.ReactNode;
+  href?: string;
+  children?: React.ReactNode;
 }
 
 export default class DropdownButton extends React.Component<DropdownButtonProps, any> {
   static defaultProps = {
-    placement: 'bottomRight',
-    type: 'default',
-    prefixCls: 'ant-dropdown-button',
+    placement: 'bottomRight' as DropDownProps['placement'],
+    type: 'default' as DropdownButtonType,
   };
 
-  render() {
+  renderButton = ({
+    getPopupContainer: getContextPopupContainer,
+    getPrefixCls,
+  }: ConfigConsumerProps) => {
     const {
-      type, disabled, onClick, children,
-      prefixCls, className, overlay, trigger, align,
-      visible, onVisibleChange, placement, getPopupContainer,
-      ...restProps,
+      prefixCls: customizePrefixCls,
+      type,
+      disabled,
+      onClick,
+      htmlType,
+      children,
+      className,
+      overlay,
+      trigger,
+      align,
+      visible,
+      onVisibleChange,
+      placement,
+      getPopupContainer,
+      href,
+      icon = <Icon type="ellipsis" />,
+      ...restProps
     } = this.props;
 
+    const prefixCls = getPrefixCls('dropdown-button', customizePrefixCls);
     const dropdownProps = {
       align,
       overlay,
@@ -35,30 +62,25 @@ export default class DropdownButton extends React.Component<DropdownButtonProps,
       trigger: disabled ? [] : trigger,
       onVisibleChange,
       placement,
-      getPopupContainer,
-    };
+      getPopupContainer: getPopupContainer || getContextPopupContainer,
+    } as DropDownProps;
     if ('visible' in this.props) {
-      (dropdownProps as any).visible = visible;
+      dropdownProps.visible = visible;
     }
 
     return (
-      <ButtonGroup
-        {...restProps}
-        className={classNames(prefixCls, className)}
-      >
-        <Button
-          type={type}
-          disabled={disabled}
-          onClick={onClick}
-        >
+      <ButtonGroup {...restProps} className={classNames(prefixCls, className)}>
+        <Button type={type} disabled={disabled} onClick={onClick} htmlType={htmlType} href={href}>
           {children}
         </Button>
         <Dropdown {...dropdownProps}>
-          <Button type={type}>
-            <Icon type="down" />
-          </Button>
+          <Button type={type}>{icon}</Button>
         </Dropdown>
       </ButtonGroup>
     );
+  };
+
+  render() {
+    return <ConfigConsumer>{this.renderButton}</ConfigConsumer>;
   }
 }

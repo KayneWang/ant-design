@@ -13,9 +13,9 @@ export default {
     filterTitle: 'Фильтр',
     filterConfirm: 'OK',
     filterReset: 'Сбросить',
-    emptyText: 'Нет данных',
     selectAll: 'Выбрать всё',
     selectInvert: 'Инвертировать выбор',
+    sortTitle: 'Сортировка',
   },
   Modal: {
     okText: 'OK',
@@ -27,18 +27,26 @@ export default {
     cancelText: 'Отмена',
   },
   Transfer: {
-    notFoundContent: 'Ничего не найдено',
-    searchPlaceholder: 'Введите название для поиска',
-    itemUnit: 'item',
-    itemsUnit: 'items',
-  },
-  Select: {
-    notFoundContent: 'Ничего не найдено',
+    searchPlaceholder: 'Поиск',
+    itemUnit: 'элем.',
+    itemsUnit: 'элем.',
   },
   Upload: {
-    uploading: 'Закачиваю...',
+    uploading: 'Загрузка...',
     removeFile: 'Удалить файл',
-    uploadError: 'Ошибка при закачке',
+    uploadError: 'При загрузке произошла ошибка',
     previewFile: 'Предпросмотр файла',
+  },
+  Empty: {
+    description: 'Нет данных',
+  },
+  Text: {
+    edit: 'редактировать',
+    copy: 'копировать',
+    copied: 'скопировано',
+    expand: 'раскрыть',
+  },
+  PageHeader: {
+    back: 'назад',
   },
 };
